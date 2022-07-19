@@ -1,0 +1,57 @@
+.app-page-contianer {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px;
+  background: #f0f1f5;
+  padding-bottom: 36px;
+  padding-top: 56px;
+  @media (min-width: 768px) {
+    padding: 20px;
+    padding-top: 48px;
+  }
+  &.fixHeight {
+    height: 100%;
+    overflow: auto;
+  }
+}
+.app-header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 58px;
+  z-index: 89;
+  padding: 20px;
+  background: #4a4b4a;
+  color: #ffffff;
+  border-bottom: 1px solid #f0f1f5;
+  @media (min-width: 768px) {
+    padding: 0px;
+    background: #fff;
+    color: #030405;
+    height: 48px;
+  }
+  .app-header-title {
+    line-height: 10px;
+    font-size: 12px;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin-left: 28px;
+    position: relative;
+    top: -3px;
+    @media (min-width: 768px) {
+      margin-left: 20px;
+      line-height: 48px;
+      top: 0px;
+    }
+  }
+}
+.app_page_footer {
+  border-top: 1px solid #f0f1f5;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0px;
+  height: 90px;
+  width: 100%;
+  z-index: 89;
+}

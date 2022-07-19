@@ -1,0 +1,56 @@
+.ant-table-wrapper {
+  height: 100%;
+  overflow-x: auto;
+
+  .ant-spin-nested-loading {
+    height: 100%;
+
+    .ant-spin {
+      max-height: none;
+    }
+
+    .ant-spin-container {
+      height: 100%;
+
+      .ant-table {
+        height: 100%;
+
+        .ant-table-container {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+
+          .ant-table-content {
+            flex: 1;
+            height: 100%;
+
+            table {
+              height: 100%;
+            }
+          }
+
+          .ant-table-header {
+          }
+
+          .ant-table-body {
+            height: 100%;
+            position: relative;
+
+            table {
+              .ant-table-tbody {
+                .ant-table-placeholder {
+                  .ant-table-cell {
+                    border: none;
+                  }
+                  position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

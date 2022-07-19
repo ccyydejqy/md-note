@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux'
+import { store } from 'reduxConfig/store'
+import { HashRouter } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
+import { Spin } from 'antd';
+import { Config } from 'router/router';
+import 'assets/styles';
+/**
+ * @description app入口
+ * 
+ */
+export function App() {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    return <Provider store={store}>
+        <React.Suspense
+            fallback={
+                <Spin style={{ position: 'absolute', top: '50vh', left: '50vw' }} />
+            }
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+            <HashRouter>{renderRoutes(Config)}</HashRouter>
+        </React.Suspense>
+    </Provider>
 
-export default App;
+} 

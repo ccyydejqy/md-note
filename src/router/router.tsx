@@ -14,6 +14,17 @@ export const Config: RouteConfig[] = [
         component: () => <Redirect to={`/${MenuDic.basicFe}`}></Redirect>,
       },
       {
+        path: "/test",
+        exact: true,
+        component: React.lazy(() =>
+              import("pages/test").then(
+                ({ Test }) => ({
+                  default: Test
+                })
+              )
+            ),
+      },
+      {
         path: `/${MenuDic.basicFe}`,
         component: React.lazy(() =>
           import("pages/basicFe").then(

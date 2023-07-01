@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./appFrame.less";
 import { renderRoutes, RouteConfigComponentProps } from "react-router-config";
 import { Layout } from "antd";

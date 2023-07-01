@@ -1,3 +1,3 @@
 export const Host = {
-    dev: '/'
+    dev: 'localhost:3000/'
 }

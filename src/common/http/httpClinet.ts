@@ -5,8 +5,9 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { message } from 'antd';
 import { ApiErrorCode } from './errorCode';
 import { Host } from './config';
+import { env } from 'env/env';
 // 配置接口地址
-axios.defaults.baseURL = '/';
+axios.defaults.baseURL = Host[env];
 // 配置超时时间
 axios.defaults.timeout = 30e3;
 axios.defaults.withCredentials = true;
@@ -30,7 +31,7 @@ export class HttpClient {
    * 发起请求
    */
   public static fetch(config: HttpClientConfig) {
-    config.baseURL = localStorage.getItem('__baseUrl') || '/'; // localStorage可以手动改baseurl
+    config.baseURL = localStorage.getItem('__baseUrl') || Host[env]; // localStorage可以手动改baseurl
     const requestId = `${config.method}${config.url}`;
     const requestSymbol = Symbol(requestId);
     HttpClient.requestMaps[requestId] = requestSymbol;
@@ -57,6 +58,7 @@ export class HttpClient {
           }
         })
         .catch((err: any) => {
+          console.log(config, 'config')
           /* 接口防抖 */
           if (config?.debounce && HttpClient.requestMaps[requestId] !== requestSymbol) {
             return;

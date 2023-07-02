@@ -8,6 +8,7 @@ export const enum MenuSubDic {
     stateUpdate = 'stateUpdate',
     commonTable = 'commonTable',
     commonList = 'commonList',
+    commonForm = 'commonForm',
 }
 export const AppMenuConfigs: MenuItem[] = [
     {
@@ -31,6 +32,10 @@ export const AppMenuConfigs: MenuItem[] = [
             {
                 label: '列表',
                 key: MenuSubDic.commonList,
+            },
+            {
+                label: '表单',
+                key: MenuSubDic.commonForm,
             },
         ]
     },

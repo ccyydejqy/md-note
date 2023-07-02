@@ -15,4 +15,18 @@ export class StandardizedComponentsService {
             data
         })
     }
+    static getCommonFormConfig(data) {
+        return HttpClient.fetch({
+            method: 'GET',
+            url: '/standardizedComponents/commonForm/formConfig',
+            data
+        })
+    }
+    static getCommonFormBackfill(data) {
+        return HttpClient.fetch({
+            method: 'GET',
+            url: '/standardizedComponents/commonForm/backfill',
+            data
+        })
+    }
 }

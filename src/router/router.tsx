@@ -78,6 +78,17 @@ export const Config: RouteConfig[] = [
               )
             ),
           },
+          {
+            path: `/${MenuDic.standardizedComponents}/${MenuSubDic.commonForm}`,
+            id: MenuSubDic.commonForm,
+            component: React.lazy(() =>
+              import("pages/standardizedComponents").then(
+                ({ FormExample }) => ({
+                  default: FormExample
+                })
+              )
+            ),
+          },
         ]
       },
     ]

@@ -14,3 +14,4 @@ export const StandardizedComponentsPage = (props: StandardizedComponentsPageProp
 }
 export * from './listExample/listExample'
 export * from './tableExample/tableExample'
+export * from './formExample/formExample'
